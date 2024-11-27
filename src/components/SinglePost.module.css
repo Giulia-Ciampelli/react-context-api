@@ -1,0 +1,43 @@
+.single {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            line-height: 2rem;
+            margin: 1rem;
+            text-align: center;
+        }
+
+        button {
+            border: none;
+            padding: .5rem;
+            border-radius: .5rem;
+            margin: 1rem;
+            background-color: var(--red-colour);
+        }
+    }
+
+    p {
+        line-height: 2rem;
+        margin: 1rem;
+        text-align: center;
+    }
+
+    img {
+        width: 50%;
+        margin: auto;
+    }
+
+    .tags {
+        background-color: var(--teal-colour);
+        border-radius: .5rem;
+        width: max-content;
+        margin: auto;
+        text-align: center;
+    }
+}

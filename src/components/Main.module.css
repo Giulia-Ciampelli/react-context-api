@@ -1,0 +1,120 @@
+/* #region main */
+main {
+    min-height: 90vh;
+    padding: 1rem;
+    
+    .container {
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-around;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                margin-top: 2rem;
+
+                .addPost {
+                    display: flex;
+                    flex-direction: column;
+                    align-self: center;
+                    padding: 2rem 0;
+                    width: 50%;
+
+                    input,
+                    textarea,
+                    select {
+                        border: none;
+                        padding: .5rem;
+                        border-radius: .5rem;
+                        margin: .25rem .5rem .25rem 0;
+                    }
+
+                    h3 {
+                        text-align: center;
+                        margin: 2rem 0 1rem;
+                    }
+
+                    .tagsContainer {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        gap: .5rem;
+
+                        label {
+
+                            input {
+                                margin-right: .5rem;
+                            }
+                        }
+                    }
+
+                    .publicCheck {
+                        margin: 2rem 0 .5rem;
+                    }
+
+                    button {
+                        border: none;
+                        padding: .5rem;
+                        border-radius: .5rem;
+                        margin: .25rem 0;
+                        background-color: var(--teal-colour);
+                    }
+                }
+
+                ul {
+                    width: 80%;
+                    margin: auto;
+
+                    li {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        align-items: center;
+                        list-style: none;
+                        background-color: var(--violet-colour);
+                        border-radius: .5rem;
+                        margin: 2rem;
+                        padding: 2rem;
+
+                        .card {
+                            display: flex;
+                            flex-direction: column;
+
+                            h2,
+                            p {
+                                line-height: 2rem;
+                                margin: 1rem;
+                                text-align: center;
+                            }
+
+                            img {
+                                width: 50%;
+                                margin: auto;
+                            }
+
+                            .tags {
+                                background-color: var(--teal-colour);
+                                border-radius: .5rem;
+                                width: max-content;
+                                margin: auto;
+                            }
+                        }
+
+                        button {
+                            border: none;
+                            padding: .5rem;
+                            border-radius: .5rem;
+                            margin: 1rem;
+                            background-color: var(--red-colour);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* #endregion main */
