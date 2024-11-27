@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { useContext } from "react";
+
+// context
+import APIContext from "../contexts/APIContext.jsx";
 
 // stile
 import style from "../components/Main.module.css";
 
 export default function PostList({ postList, handleTrashPost }) {
+    const {baseUrl} = useContext(APIContext);
+
     return (
         <>
             <h1>
@@ -22,7 +28,7 @@ export default function PostList({ postList, handleTrashPost }) {
                                     {post.title}
                                 </Link>
                             </h2>
-                            <img src={`http://localhost:3000/${post.image}`} alt={post.title} />
+                            <img src={`${baseUrl}/${post.image}`} alt={post.title} />
                             <p>
                                 {post.content}
                             </p>
