@@ -7,7 +7,7 @@ import style from "../components/Main.module.css";
 
 export default function PostList({postList, handleTrashPost}) {
     return (
-        <ul ul >
+        <ul>
         {
             postList.length ? postList.map((post, index) => <li key={index}>
                 <div className={style.card}>
