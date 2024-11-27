@@ -1,5 +1,6 @@
 // #region importazioni
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import APIContext from './contexts/APIContext';
 
 // pagine
 import Home from './pages/Home';
