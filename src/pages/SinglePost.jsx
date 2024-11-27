@@ -1,5 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
+// context
+import APIContext from "../contexts/APIContext.jsx";
 
 // stile
 import style from "../components/SinglePost.module.css";
@@ -7,12 +10,12 @@ import style from "../components/SinglePost.module.css";
 export default function SinglePost() {
     const { slug } = useParams();
     const [post, setPost] = useState();
-    const url = `http://localhost:3000/posts/${slug}`;
     const navigate = useNavigate();
+    const {baseUrl} = useContext(APIContext); // variabile context
 
     // funzione fetch
     useEffect(() => {
-        fetch(url)
+        fetch(`${baseUrl}/posts/${slug}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -40,7 +43,7 @@ export default function SinglePost() {
                     {post.title}
                 </h2>
             </div>
-            <img src={`http://localhost:3000/${post.image}`} alt={post.title} />
+            <img src={`${baseUrl}/${post.image}`} alt={post.title} />
             <p>
                 {post.content}
             </p>
