@@ -1,5 +1,8 @@
 // importazioni
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
+// context
+import APIContext from "../contexts/APIContext.jsx";
 
 // componenti
 import PostList from "../components/PostList.jsx";
@@ -20,9 +23,10 @@ const initialPostsData = {
 export default function Posts() {
     const [postsData, setPostsData] = useState(initialPostsData); // variabile per aggiungere post
     const [postList, setPostList] = useState([]); // variabile fetch
+    const {baseUrl} = useContext(APIContext); // variabile context
 
     // funzione fetch
-    function fetchData(url = 'http://localhost:3000/posts') {
+    function fetchData(url = `${baseUrl}/posts`) {
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -62,7 +66,7 @@ export default function Posts() {
         };
 
         // richiesta POST al backend
-        fetch('http://localhost:3000/posts', {
+        fetch(`${baseUrl}/posts`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newPost)
@@ -131,7 +135,7 @@ export default function Posts() {
         }
 
         // richiesta DELETE al backend
-        fetch(`http://localhost:3000/posts/${slug}`, {
+        fetch(`${baseUrl}/posts/${slug}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
