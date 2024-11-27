@@ -2,7 +2,7 @@
 main {
     min-height: 90vh;
     padding: 1rem;
-    
+
     .container {
 
         .row {
@@ -62,6 +62,10 @@ main {
                         margin: .25rem 0;
                         background-color: var(--teal-colour);
                     }
+                }
+
+                h1 {
+                    text-align: center;
                 }
 
                 ul {
