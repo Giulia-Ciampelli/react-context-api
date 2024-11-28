@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // contexts
 import APIContext from './contexts/APIContext.jsx';
+import { PostListProvider } from './contexts/PostListContext.jsx';
 
 // pagine
 import Home from './pages/Home.jsx';
@@ -23,17 +24,19 @@ function App() {
 
   return (
     <>
-      <APIContext.Provider value={{baseUrl}}>
-        <BrowserRouter>
-          <Routes>
-            <Route element={<DefaultLayout />}>
-              <Route path='/' element={<Home />} />
-              <Route path='/posts' element={<Posts />} />
-              <Route path='/posts/:slug' element={<SinglePost />} />
-              <Route path='/about' element={<AboutUs />} />
-            </Route>
-          </Routes>
-        </BrowserRouter>
+      <APIContext.Provider value={{ baseUrl }}>
+        <PostListProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route element={<DefaultLayout />}>
+                <Route path='/' element={<Home />} />
+                <Route path='/posts' element={<Posts />} />
+                <Route path='/posts/:slug' element={<SinglePost />} />
+                <Route path='/about' element={<AboutUs />} />
+              </Route>
+            </Routes>
+          </BrowserRouter>
+        </PostListProvider>
       </APIContext.Provider>
     </>
   )

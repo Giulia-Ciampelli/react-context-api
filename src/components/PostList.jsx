@@ -4,13 +4,15 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 
 // context
-import APIContext from "../contexts/APIContext.jsx";
+import APIContext from "../contexts/APIContext";
+import PostListContext from "../contexts/PostListContext";
 
 // stile
 import style from "../components/Main.module.css";
 
-export default function PostList({ postList, handleTrashPost }) {
+export default function PostList({ handleTrashPost }) {
     const {baseUrl} = useContext(APIContext);
+    const { postList } = useContext(PostListContext);
 
     return (
         <>
